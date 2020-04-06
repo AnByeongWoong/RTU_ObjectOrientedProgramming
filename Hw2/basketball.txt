@@ -1,0 +1,9 @@
+농구선수 Red 다섯, Blue 다섯
+
+Red team 의 선수 5명
+Blue team 의 선수 5명
+
+슛 넣었을 때 골 or miss
+miss 나 골 하면 하기
+
+골이였을 경우 +3 20% +2 80%
