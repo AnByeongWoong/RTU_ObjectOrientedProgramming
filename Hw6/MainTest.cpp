@@ -5,6 +5,26 @@
 using namespace std;
 
 
+// void show(Phone item)
+// {
+//     if (item.get_name() == "" && item.get_price() == 0.0) {
+//         cout << "There is not that item" << endl;
+//         return;
+//     }
+
+//     cout << item.get_name() << " "
+//         << "'" << item.get_price() << "' ";
+//     if (item.get_spec())
+//     {
+//         cout << item.get_spec()->get_typeByString() << "' "
+//             << item.get_spec()->get_capacityOfStorage() << "' "
+//             << item.get_spec()->get_manufacturer() << " "
+//             << endl;
+//     }
+
+
+// }
+
 void show(const Phone & item)
 {
     cout<<item<<"\n";
@@ -77,37 +97,9 @@ int main()
     inv.add_item("galaxy20", 190.00, sameSamsung);
     inv.add_item("galaxy10S", 180.00, sameSamsung);
     inv.add_item("galaxyNote10", 180.00, sameSamsung);
-    show(inv.find_item(*sameSamsung));
-
-    ///// check how to delete object that we make.
-    Phone* qry;
-    qry = new Phone("galaxy8", 150.00, Samsung);
-    show(inv.find_item(*qry));
-    qry = new Phone("galaxy10", 150.00, Samsung);
-    show(inv.find_item(*qry));
-    qry = new Phone("Iphone", 0.00, ApplePhone);
-    show(inv.find_item(*qry));
-    qry = new Phone("", 0.00, AppleTablet);
-    show(inv.find_item(*qry));
-
-    cout << endl;
-    cout << "------- find by spec of Phone ------" << endl;
-    show(inv.find_item(PhoneSpec(PhoneSpec::Type::SMARTPHONE, 10000, "Samsung")));
-    show(inv.find_item(PhoneSpec(PhoneSpec::Type::SMARTPHONE, 10000, "Apple")));
-    show(inv.find_item(PhoneSpec(PhoneSpec::Type::SMARTPHONE, 8000, "LG")));
-    cout << endl;
-    cout << "Max capacity of phone = ";
-    show(max_capacityOfStorage(inv));
-    cout << "Max price of Phone = ";
-    show(max_price(inv));
-    cout << "Avg price of whole Phone = " << avg_price(inv) << endl;
-
-    cout<< "---------------checking HW6-----------------"<<endl;
-    inv.save("data1.csv");
+    inv.save("data1");
     Inventory inv2;
-    inv2.load("data100.csv");
-    inv2.save("data100.csv");
-    inv2.load("data1.csv");
+    inv2.load("data1");
     showAll(inv2);
 
 

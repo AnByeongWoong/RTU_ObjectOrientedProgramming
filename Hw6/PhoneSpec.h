@@ -22,6 +22,8 @@ public:
     void recv_from(std::istream & is);
     friend std::istream & operator>>(std::istream & is, PhoneSpec & spec );
 
+    string getAllMemberByString() const;
+
 private:
     PhoneSpec::Type _type;
     double _capacityOfStorage;

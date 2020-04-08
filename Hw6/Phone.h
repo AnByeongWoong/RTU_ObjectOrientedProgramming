@@ -18,10 +18,10 @@ public:
     double get_price() const { return _price; }
     shared_ptr<const PhoneSpec> get_spec() const { return _spec; }
     void send_to(std::ostream & os) const;
-
+    
     void recv_from(std::istream & is);
     friend std::istream & operator>>(std::istream is, Phone & item);
-
+    string getAllMemberByString() const;
 private:
 
     string _name;

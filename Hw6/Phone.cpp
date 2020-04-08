@@ -32,15 +32,32 @@ std::istream & operator>>(std::istream & is, Phone & item)
     return is;
 }
 
-void recv_from(std::istream & is)
+void Phone::recv_from(std::istream & is)
 {
-    if (is)
-        getline(is >> std::ws, this->_name, ';'); 
-    if (is)
-       (is >> this->_price).ignore();
 
+    if (is){
+        getline(is >> std::ws, this->_name, ';'); 
+    }
+        
+    if (is){
+        (is >> this->_price).ignore();
+    }
+       
     auto temp_spec{ std::make_shared<PhoneSpec>() };
     is >> *temp_spec;  // alternative: temp_spec->recv_from(is);
     _spec = temp_spec; // replaces specification
+}
 
+string Phone::getAllMemberByString() const
+{
+    string temp;
+    temp.append(this->_name);
+    temp.append(";");
+    temp.append(std::to_string(this->_price));
+    temp.append(";");
+    if(_spec)
+    {
+        temp.append(_spec->getAllMemberByString());
+    }
+    return temp;
 }

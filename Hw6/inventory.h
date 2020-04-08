@@ -3,6 +3,8 @@
 
 #include "Phone.h"
 #include <exception>
+////// we have to include this 
+#include<fstream>
 class Inventory
 {
 public:
@@ -22,7 +24,9 @@ public:
         }
         throw std::out_of_range("Invalid index value. ");
     }
-
+    void save(const std::string & csv_file_name) const;
+    void load(const std::string & csv_file_name);
+    void set_count(size_t num){ _count = num ;}
 private:
     static const size_t MAX_SIZE{ 10 };
 

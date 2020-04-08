@@ -105,3 +105,14 @@ void PhoneSpec::recv_from(std::istream & is)
         (is >> this->_manufacturer).ignore();
 
 }
+
+string PhoneSpec::getAllMemberByString() const
+{
+    string temp;
+    temp.append(Type_cstr[static_cast<size_t>(this->_type)]);
+    temp.append(";");
+    temp.append(to_string(this->_capacityOfStorage));
+    temp.append(";");
+    temp.append(this->_manufacturer);
+    return temp;
+}
