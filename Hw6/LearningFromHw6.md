@@ -12,6 +12,8 @@ The list of what I learned by using C++
     - operator@(x) == when operator@() is a non-member function
 
 - The example what I used in this assignment
-'''c++
+<pre>
+<code>
 friend std::istream & operator>>(std::istream is, Phone & item);
-'''
+</code>
+</pre>
